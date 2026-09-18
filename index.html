@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXORA is a modern workspace for teams to plan, automate, collaborate, and grow.">
+  <meta name="theme-color" content="#07090e">
+  <meta property="og:title" content="NEXORA — Work smarter. Move faster.">
+  <meta property="og:description" content="NEXORA is a modern workspace for teams to plan, automate, collaborate, and grow.">
+  <meta property="og:type" content="website">
+
+  <title>NEXORA — Work smarter. Move faster.</title>
+
+  <!-- Clean System Font Fallback & Inter Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT BAR -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Product announcement">
+    <div class="container announcement-container">
+      <a href="#automation" class="announcement-content">
+        <span class="announcement-badge">New</span>
+        <span class="announcement-text">Introducing NEXORA AI — Automate your everyday workflow</span>
+        <span class="announcement-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <button type="button" class="announcement-close" id="announcementCloseBtn" aria-label="Dismiss announcement">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- 2. STICKY NAVIGATION -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#" class="brand-logo" aria-label="NEXORA Home">
+        <span class="logo-mark">
+          <span class="logo-dot"></span>
+        </span>
+        <span class="logo-text">NEXORA</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#features" class="nav-link">Product</a></li>
+          <li><a href="#workflow" class="nav-link">Solutions</a></li>
+          <li><a href="#analytics" class="nav-link">Resources</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="btn btn-ghost" data-modal-target="signupModal">Log in</button>
+        <button type="button" class="btn btn-primary btn-sm" data-modal-target="signupModal">Start free</button>
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <ul class="mobile-nav-list">
+          <li><a href="#features" class="mobile-nav-link">Product</a></li>
+          <li><a href="#workflow" class="mobile-nav-link">Solutions</a></li>
+          <li><a href="#analytics" class="mobile-nav-link">Resources</a></li>
+          <li><a href="#pricing" class="mobile-nav-link">Pricing</a></li>
+        </ul>
+        <div class="mobile-menu-actions">
+          <button type="button" class="btn btn-ghost btn-block" data-modal-target="signupModal">Log in</button>
+          <button type="button" class="btn btn-primary btn-block" data-modal-target="signupModal">Start free</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-bg-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <!-- Hero Copy -->
+        <div class="hero-copy reveal">
+          <div class="hero-pill">
+            <span class="pill-sparkle">&#10022;</span>
+            <span>Next-Gen Collaborative OS</span>
+          </div>
+          <h1 class="hero-title">Your entire workflow, <br><span class="gradient-text">finally in one place.</span></h1>
+          <p class="hero-subtext">Plan projects, automate repetitive work, and keep your team moving forward with one beautifully simple workspace.</p>
+          <div class="hero-cta-group">
+            <button type="button" class="btn btn-primary btn-lg" data-modal-target="signupModal">
+              <span>Start for free</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg" data-modal-target="demoModal">
+              <span class="play-icon">&#9658;</span>
+              <span>Watch demo</span>
+            </button>
+          </div>
+          <p class="hero-trust-note">No credit card required &bull; Free 14-day trial &bull; Setup in 2 minutes</p>
+        </div>
+
+        <!-- Hero Dashboard Simulation Preview -->
+        <div class="hero-visual reveal">
+          <div class="dashboard-window">
+            <div class="window-header">
+              <div class="window-dots" aria-hidden="true">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <div class="window-address-bar">nexora.app/workspace/engineering-sprint</div>
+              <div class="window-header-actions">
+                <span class="status-indicator"></span> Live Sync
+              </div>
+            </div>
+
+            <div class="dashboard-body">
+              <!-- Sidebar Preview -->
+              <aside class="dash-sidebar" aria-hidden="true">
+                <div class="dash-brand-icon">N</div>
+                <nav class="dash-nav">
+                  <div class="dash-nav-item active">&#9638;</div>
+                  <div class="dash-nav-item">&#9635;</div>
+                  <div class="dash-nav-item">&#9881;</div>
+                  <div class="dash-nav-item">&#9776;</div>
+                </nav>
+                <div class="dash-avatar-sm">JS</div>
+              </aside>
+
+              <!-- Main Dashboard Area -->
+              <div class="dash-content">
+                <!-- Top Toolbar -->
+                <div class="dash-toolbar">
+                  <div>
+                    <h3 class="dash-heading">Q3 Core Architecture Sprint</h3>
+                    <p class="dash-sub">18 tasks remaining &bull; 92% velocity</p>
+                  </div>
+                  <div class="dash-team-stack">
+                    <span class="team-avatar av-1">MC</span>
+                    <span class="team-avatar av-2">AK</span>
+                    <span class="team-avatar av-3">TL</span>
+                    <span class="team-avatar av-more">+4</span>
+                  </div>
+                </div>
+
+                <!-- Metrics Row -->
+                <div class="dash-metrics-grid">
+                  <div class="dash-metric-card">
+                    <span class="m-label">Sprint Velocity</span>
+                    <strong class="m-value">+38.4%</strong>
+                    <div class="m-bar"><span class="m-bar-fill" style="width: 78%;"></span></div>
+                  </div>
+                  <div class="dash-metric-card">
+                    <span class="m-label">Tasks Automated</span>
+                    <strong class="m-value">1,420</strong>
+                    <span class="m-sub text-success">&#8593; 24% this week</span>
+                  </div>
+                  <div class="dash-metric-card">
+                    <span class="m-label">Health Score</span>
+                    <strong class="m-value">98/100</strong>
+                    <span class="m-sub text-accent">Optimal State</span>
+                  </div>
+                </div>
+
+                <!-- Interactive-Looking Task Table -->
+                <div class="dash-table-wrapper">
+                  <div class="dash-table-header">
+                    <span>Task Name</span>
+                    <span>Assignee</span>
+                    <span>Status</span>
+                    <span>Progress</span>
+                  </div>
+                  <div class="dash-table-row">
+                    <span class="task-title">&#9673; Re-architect distributed caching layer</span>
+                    <span class="task-user">Maya Chen</span>
+                    <span class="task-badge badge-done">Completed</span>
+                    <span class="task-progress"><span class="progress-pill fill-100"></span></span>
+                  </div>
+                  <div class="dash-table-row">
+                    <span class="task-title">&#9673; Real-time WebSocket sync engine</span>
+                    <span class="task-user">Alex Kim</span>
+                    <span class="task-badge badge-active">In Progress</span>
+                    <span class="task-progress"><span class="progress-pill fill-60"></span></span>
+                  </div>
+                  <div class="dash-table-row">
+                    <span class="task-title">&#9673; Automated pipeline failover test</span>
+                    <span class="task-user">Liam Davis</span>
+                    <span class="task-badge badge-pending">Review</span>
+                    <span class="task-progress"><span class="progress-pill fill-30"></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badges / Decorative Accents -->
+          <div class="floating-chip chip-left" aria-hidden="true">
+            <span class="chip-icon">&#10003;</span>
+            <div>
+              <strong>Deployment Passed</strong>
+              <small>Latency reduced by 42ms</small>
+            </div>
+          </div>
+
+          <div class="floating-chip chip-right" aria-hidden="true">
+            <span class="chip-avatar">MC</span>
+            <div>
+              <strong>Automation Triggered</strong>
+              <small>Synced with 4 connected services</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TRUSTED COMPANIES -->
+    <section class="trusted-section" aria-label="Companies that trust NEXORA">
+      <div class="container">
+        <p class="trusted-heading">Trusted by engineering &amp; operations teams building what’s next</p>
+        <div class="trusted-logos-grid">
+          <span class="logo-item">LUMEN</span>
+          <span class="logo-item">VANTA</span>
+          <span class="logo-item">ORBIT</span>
+          <span class="logo-item">KINETIC</span>
+          <span class="logo-item">NORTHSTAR</span>
+          <span class="logo-item">PULSE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PRODUCT SHOWCASE PREVIEW -->
+    <section class="section showcase-section" id="product">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Unified Control</span>
+          <h2 class="section-title">Everything your team needs. <br><span class="gradient-text">Nothing it doesn't.</span></h2>
+          <p class="section-desc">From planning to execution, NEXORA keeps your work organized, visible, and continually moving forward.</p>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div class="showcase-topbar">
+            <div class="showcase-tabs">
+              <button type="button" class="showcase-tab active">Overview</button>
+              <button type="button" class="showcase-tab">Timeline &amp; Gantt</button>
+              <button type="button" class="showcase-tab">Automations</button>
+              <button type="button" class="showcase-tab">Resource Matrix</button>
+            </div>
+            <span class="showcase-pill">Live Cluster Engine</span>
+          </div>
+
+          <div class="showcase-grid">
+            <!-- Left Sub-Panel: Pipeline Flow -->
+            <div class="showcase-panel">
+              <h4 class="panel-title">Active Work Streams</h4>
+              <div class="stream-item">
+                <div class="stream-info">
+                  <strong>Global API Gateway V3</strong>
+                  <span>9 of 10 milestones checked</span>
+                </div>
+                <div class="stream-pct">90%</div>
+              </div>
+              <div class="stream-item">
+                <div class="stream-info">
+                  <strong>Zero-Trust Identity Protocol</strong>
+                  <span>14 of 18 tasks executed</span>
+                </div>
+                <div class="stream-pct">77%</div>
+              </div>
+              <div class="stream-item">
+                <div class="stream-info">
+                  <strong>Telemetry Metrics Exporter</strong>
+                  <span>3 of 4 reviews verified</span>
+                </div>
+                <div class="stream-pct">75%</div>
+              </div>
+            </div>
+
+            <!-- Right Sub-Panel: Activity & Velocity Mini Chart -->
+            <div class="showcase-panel">
+              <h4 class="panel-title">Throughput Activity</h4>
+              <div class="css-chart-container">
+                <div class="css-chart-bar" style="--h: 40%;" data-tooltip="Mon: 42 tasks"><span>Mon</span></div>
+                <div class="css-chart-bar" style="--h: 65%;" data-tooltip="Tue: 68 tasks"><span>Tue</span></div>
+                <div class="css-chart-bar" style="--h: 55%;" data-tooltip="Wed: 59 tasks"><span>Wed</span></div>
+                <div class="css-chart-bar" style="--h: 85%;" data-tooltip="Thu: 92 tasks"><span>Thu</span></div>
+                <div class="css-chart-bar active" style="--h: 98%;" data-tooltip="Fri: 114 tasks"><span>Fri</span></div>
+                <div class="css-chart-bar" style="--h: 70%;" data-tooltip="Sat: 74 tasks"><span>Sat</span></div>
+                <div class="css-chart-bar" style="--h: 45%;" data-tooltip="Sun: 48 tasks"><span>Sun</span></div>
+              </div>
+              <div class="chart-summary">
+                <span>Peak Performance: <strong>114 actions/hr</strong></span>
+                <span class="badge-accent">High Efficiency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FEATURES SECTION -->
+    <section class="section features-section" id="features">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Core Capabilities</span>
+          <h2 class="section-title">Engineered for absolute clarity.</h2>
+          <p class="section-desc">Eliminate context switching and fractured tools with purpose-built collaboration blocks.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon icon-workflow"></div>
+            </div>
+            <h3 class="feature-title">Smart Workflows</h3>
+            <p class="feature-desc">Automate repetitive processes and keep projects moving automatically with zero friction.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon icon-collab"></div>
+            </div>
+            <h3 class="feature-title">Team Collaboration</h3>
+            <p class="feature-desc">Bring tasks, live discussions, and key product decisions together in one unified interface.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon icon-ai"></div>
+            </div>
+            <h3 class="feature-title">AI Assistance</h3>
+            <p class="feature-desc">Turn high-volume backlog items into structured, auto-assigned actionable roadmaps.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon icon-analytics"></div>
+            </div>
+            <h3 class="feature-title">Real-Time Analytics</h3>
+            <p class="feature-desc">Understand cycle time, throughput, and bottleneck risks with crystal clear dashboard metrics.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon icon-workspace"></div>
+            </div>
+            <h3 class="feature-title">Custom Workspaces</h3>
+            <p class="feature-desc">Build modular views, custom fields, and governance models that match how your team delivers.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon icon-security"></div>
+            </div>
+            <h3 class="feature-title">Secure by Design</h3>
+            <p class="feature-desc">Enterprise SOC2 compliance, granular RBAC permissions, and end-to-end tokenized encryption.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HOW IT WORKS / WORKFLOW -->
+    <section class="section workflow-section" id="workflow">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Simple Methodology</span>
+          <h2 class="section-title">From idea to done in three steps.</h2>
+          <p class="section-desc">A frictionless path from strategic planning to automated delivery.</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="steps-connecting-line" aria-hidden="true"></div>
+
+          <!-- Step 1 -->
+          <div class="step-card reveal">
+            <div class="step-badge">01</div>
+            <h3 class="step-title">Plan</h3>
+            <p class="step-desc">Bring projects, technical specs, and milestone priorities into one centralized workspace.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card reveal">
+            <div class="step-badge">02</div>
+            <h3 class="step-title">Automate</h3>
+            <p class="step-desc">Let NEXORA handle recurring handoffs, status alerts, and cross-team dependencies automatically.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card reveal">
+            <div class="step-badge">03</div>
+            <h3 class="step-title">Grow</h3>
+            <p class="step-desc">Use continuous operational insights to refine throughput and scale team velocity without burnout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. AUTOMATION SECTION -->
+    <section class="section automation-section" id="automation">
+      <div class="container">
+        <div class="automation-grid">
+          <div class="automation-copy reveal">
+            <span class="section-kicker">Visual Logic Engine</span>
+            <h2 class="section-title">Let your workflow <br><span class="gradient-text">run itself.</span></h2>
+            <p class="section-desc">Build powerful triggers, logic conditions, and multi-app actions without writing complicated scripts or maintaining brittle webhooks.</p>
+            <div class="automation-features-list">
+              <div class="auto-feat-item">
+                <span class="check-icon">&#10003;</span>
+                <span>Pre-built templates for sprint cycles and QA handoffs</span>
+              </div>
+              <div class="auto-feat-item">
+                <span class="check-icon">&#10003;</span>
+                <span>Conditional branching based on priority, SLA, and owner</span>
+              </div>
+              <div class="auto-feat-item">
+                <span class="check-icon">&#10003;</span>
+                <span>Instant bi-directional sync across communication channels</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-modal-target="demoModal">Explore automation &rarr;</button>
+          </div>
+
+          <!-- Visual Node Flow Simulator -->
+          <div class="automation-visual reveal">
+            <div class="flow-card-stack">
+              <!-- Node 1 -->
+              <div class="flow-node">
+                <div class="node-icon icon-trigger">&#9889;</div>
+                <div class="node-content">
+                  <span class="node-type">TRIGGER</span>
+                  <strong>New task created with label [Urgent]</strong>
+                </div>
+              </div>
+              <div class="flow-connector" aria-hidden="true"><span class="flow-line"></span></div>
+
+              <!-- Node 2 -->
+              <div class="flow-node">
+                <div class="node-icon icon-condition">&#9878;</div>
+                <div class="node-content">
+                  <span class="node-type">CONDITION</span>
+                  <strong>Priority &gt;= P0 &amp; SLA &lt; 4 Hours</strong>
+                </div>
+              </div>
+              <div class="flow-connector" aria-hidden="true"><span class="flow-line"></span></div>
+
+              <!-- Node 3 -->
+              <div class="flow-node">
+                <div class="node-icon icon-action">&#10148;</div>
+                <div class="node-content">
+                  <span class="node-type">ACTION</span>
+                  <strong>Notify On-Call Lead &bull; Assign to Maya Chen</strong>
+                </div>
+              </div>
+              <div class="flow-connector" aria-hidden="true"><span class="flow-line"></span></div>
+
+              <!-- Node 4 -->
+              <div class="flow-node node-success">
+                <div class="node-icon icon-sync">&#10004;</div>
+                <div class="node-content">
+                  <span class="node-type">SYNC STATUS</span>
+                  <strong>Update Sprint Board &amp; Log Audit Event</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ANALYTICS SECTION -->
+    <section class="section analytics-section" id="analytics">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Deep Visibility</span>
+          <h2 class="section-title">See what’s happening <br><span class="gradient-text">before it becomes a problem.</span></h2>
+          <p class="section-desc">Spot blockers, forecast completion windows, and optimize work distribution across teams.</p>
+        </div>
+
+        <div class="analytics-card-deck">
+          <!-- Stat Counter 1 -->
+          <div class="stat-box reveal">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-counter="128">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Active Team Projects</span>
+            <span class="stat-delta text-success">&#8593; 14% vs last month</span>
+          </div>
+
+          <!-- Stat Counter 2 -->
+          <div class="stat-box reveal">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-counter="2846">0</span>
+            </div>
+            <span class="stat-label">Tasks Completed On-Time</span>
+            <span class="stat-delta text-success">&#8593; 99.2% SLA compliance</span>
+          </div>
+
+          <!-- Stat Counter 3 -->
+          <div class="stat-box reveal">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-counter="94">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <span class="stat-label">Team Efficiency Score</span>
+            <span class="stat-delta text-accent">+8.5% industry benchmark</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. TESTIMONIALS -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Customer Stories</span>
+          <h2 class="section-title">Loved by operators and builders.</h2>
+          <p class="section-desc">Discover how modern teams accelerate product execution with NEXORA.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Card 1 -->
+          <div class="testimonial-card reveal">
+            <div class="quote-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="quote-text">"Before NEXORA, our workflow lived across five different disconnected tools. Now the whole team knows exactly what needs to happen next without status meetings."</blockquote>
+            <div class="quote-author">
+              <div class="author-avatar av-mc">MC</div>
+              <div class="author-meta">
+                <strong class="author-name">Maya Chen</strong>
+                <span class="author-role">Operations Lead, Lumen</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="testimonial-card reveal">
+            <div class="quote-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="quote-text">"The automation builder is ridiculously intuitive. We automated our entire cross-functional release pipeline in one afternoon and cut cycle time by 40%."</blockquote>
+            <div class="quote-author">
+              <div class="author-avatar av-ak">AK</div>
+              <div class="author-meta">
+                <strong class="author-name">Alex Kim</strong>
+                <span class="author-role">VP of Engineering, Vanta Labs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-card reveal">
+            <div class="quote-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="quote-text">"NEXORA strikes the perfect balance between high-level executive visibility and fine-grained task execution. It has fundamentally leveled up our team."</blockquote>
+            <div class="quote-author">
+              <div class="author-avatar av-tl">TL</div>
+              <div class="author-meta">
+                <strong class="author-name">Tariq Larsson</strong>
+                <span class="author-role">Head of Product, Orbit Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. PRICING SECTION -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Transparent Pricing</span>
+          <h2 class="section-title">Simple plans for teams of all sizes.</h2>
+          <p class="section-desc">Get started for free. Upgrade as your team and throughput expand.</p>
+
+          <!-- Billing Frequency Toggle -->
+          <div class="pricing-toggle-wrapper">
+            <span class="toggle-label" id="monthlyLabel">Monthly</span>
+            <button type="button" class="pricing-toggle-btn" id="billingToggle" aria-label="Toggle between monthly and yearly billing" aria-pressed="false">
+              <span class="toggle-knob"></span>
+            </button>
+            <span class="toggle-label" id="yearlyLabel">
+              Yearly
+              <span class="discount-badge">Save 20%</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Starter Plan -->
+          <div class="pricing-card reveal">
+            <div class="plan-header">
+              <h3 class="plan-name">Starter</h3>
+              <p class="plan-desc">For individuals and founders getting organized.</p>
+            </div>
+            <div class="plan-price-wrap">
+              <span class="plan-currency">$</span>
+              <span class="plan-price" data-monthly="0" data-yearly="0">0</span>
+              <span class="plan-period">/ month</span>
+            </div>
+            <p class="billing-note">Free forever &bull; No card required</p>
+
+            <ul class="plan-features">
+              <li><span class="check-mark">&#10003;</span> Up to 3 active projects</li>
+              <li><span class="check-mark">&#10003;</span> Basic workflow automations</li>
+              <li><span class="check-mark">&#10003;</span> Core task &amp; list management</li>
+              <li><span class="check-mark">&#10003;</span> Community support access</li>
+            </ul>
+
+            <button type="button" class="btn btn-secondary btn-block" data-modal-target="signupModal">Get started</button>
+          </div>
+
+          <!-- Pro Plan (Highlighted) -->
+          <div class="pricing-card popular reveal">
+            <div class="popular-ribbon">Most popular</div>
+            <div class="plan-header">
+              <h3 class="plan-name">Pro</h3>
+              <p class="plan-desc">For growing teams building and shipping weekly.</p>
+            </div>
+            <div class="plan-price-wrap">
+              <span class="plan-currency">$</span>
+              <span class="plan-price" data-monthly="19" data-yearly="15">19</span>
+              <span class="plan-period">/ month</span>
+            </div>
+            <p class="billing-note plan-billing-text">Billed monthly</p>
+
+            <ul class="plan-features">
+              <li><span class="check-mark">&#10003;</span> Unlimited projects &amp; boards</li>
+              <li><span class="check-mark">&#10003;</span> Advanced multi-step automations</li>
+              <li><span class="check-mark">&#10003;</span> Embedded AI workflow co-pilot</li>
+              <li><span class="check-mark">&#10003;</span> Full real-time analytics suite</li>
+              <li><span class="check-mark">&#10003;</span> Unlimited team collaboration</li>
+              <li><span class="check-mark">&#10003;</span> Priority 24/7 technical support</li>
+            </ul>
+
+            <button type="button" class="btn btn-primary btn-block" data-modal-target="signupModal">Start free trial</button>
+          </div>
+
+          <!-- Scale Plan -->
+          <div class="pricing-card reveal">
+            <div class="plan-header">
+              <h3 class="plan-name">Scale</h3>
+              <p class="plan-desc">For high-throughput organizations with strict security.</p>
+            </div>
+            <div class="plan-price-wrap">
+              <span class="plan-currency">$</span>
+              <span class="plan-price" data-monthly="49" data-yearly="39">49</span>
+              <span class="plan-period">/ month</span>
+            </div>
+            <p class="billing-note plan-billing-text">Billed monthly</p>
+
+            <ul class="plan-features">
+              <li><span class="check-mark">&#10003;</span> Everything in Pro plan</li>
+              <li><span class="check-mark">&#10003;</span> Custom role-based permissions (RBAC)</li>
+              <li><span class="check-mark">&#10003;</span> Enterprise custom workflow logic</li>
+              <li><span class="check-mark">&#10003;</span> Audit trails &amp; SOC2 compliance export</li>
+              <li><span class="check-mark">&#10003;</span> Dedicated Success Manager</li>
+              <li><span class="check-mark">&#10003;</span> 99.99% uptime guarantee (SLA)</li>
+            </ul>
+
+            <button type="button" class="btn btn-secondary btn-block" data-modal-target="demoModal">Talk to sales</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. FAQ ACCORDION -->
+    <section class="section faq-section" id="faq">
+      <div class="container faq-container">
+        <div class="section-header text-center reveal">
+          <span class="section-kicker">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Everything you need to know about getting started with NEXORA.</p>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+          <!-- Item 1 -->
+          <div class="accordion-item reveal">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
+              <span class="accordion-question">What is NEXORA?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content" id="faq-ans-1" role="region" aria-labelledby="faq-q-1">
+              <div class="accordion-body">
+                NEXORA is a unified collaborative operating workspace designed for modern product, engineering, and operations teams. It consolidates project roadmaps, visual automation engines, document collaboration, and real-time team analytics into one seamless interface.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item reveal">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
+              <span class="accordion-question">Can I try NEXORA for free?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content" id="faq-ans-2" role="region" aria-labelledby="faq-q-2">
+              <div class="accordion-body">
+                Yes! We offer a generous free-forever Starter plan for individual builders, as well as an unrestricted 14-day free trial on our Pro and Scale plans with zero commitments.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item reveal">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
+              <span class="accordion-question">Do I need a credit card to sign up?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content" id="faq-ans-3" role="region" aria-labelledby="faq-q-3">
+              <div class="accordion-body">
+                No credit card is required to sign up or begin your 14-day trial. You only provide payment details if you decide to upgrade to an active paid plan.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item reveal">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
+              <span class="accordion-question">Can I cancel or switch my plan anytime?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content" id="faq-ans-4" role="region" aria-labelledby="faq-q-4">
+              <div class="accordion-body">
+                Absolutely. You can upgrade, downgrade, or cancel your subscription at any time with a single click from your workspace billing dashboard. No retention obstacles or phone calls needed.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="accordion-item reveal">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-5" id="faq-q-5">
+              <span class="accordion-question">Does NEXORA work for small distributed teams?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content" id="faq-ans-5" role="region" aria-labelledby="faq-q-5">
+              <div class="accordion-body">
+                NEXORA was built specifically to empower distributed and async-first teams. Built-in timezone-aware task handoffs, automated asynchronous status standups, and live document sync ensure everyone stays aligned.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="accordion-item reveal">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-6" id="faq-q-6">
+              <span class="accordion-question">Does NEXORA include AI automation features?</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-content" id="faq-ans-6" role="region" aria-labelledby="faq-q-6">
+              <div class="accordion-body">
+                Yes. NEXORA AI is natively integrated across the entire platform. It can break down large feature requirements into structured user stories, summarize long task threads, write sprint retrospectives, and auto-route issues to the most appropriate team member.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. FINAL CTA -->
+    <section class="section final-cta-section">
+      <div class="container">
+        <div class="final-cta-card reveal">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <div class="cta-inner">
+            <h2 class="cta-title">Ready to make work <br><span class="gradient-text">feel simpler?</span></h2>
+            <p class="cta-desc">Join thousands of forward-thinking teams using NEXORA to eliminate busywork and focus on building high-impact products.</p>
+            <div class="cta-buttons">
+              <button type="button" class="btn btn-primary btn-lg" data-modal-target="signupModal">Start for free</button>
+              <button type="button" class="btn btn-secondary btn-lg" data-modal-target="demoModal">Book a demo</button>
+            </div>
+            <p class="cta-footnote">Free 14-day trial &bull; No credit card required &bull; Cancel anytime</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <!-- Footer Brand Column -->
+        <div class="footer-brand-col">
+          <a href="#" class="brand-logo" aria-label="NEXORA Home">
+            <span class="logo-mark"><span class="logo-dot"></span></span>
+            <span class="logo-text">NEXORA</span>
+          </a>
+          <p class="footer-tagline">Work smarter. Move faster.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links Columns -->
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Product</h4>
+            <ul class="footer-col-list">
+              <li><a href="#features">Features</a></li>
+              <li><a href="#automation">Automation</a></li>
+              <li><a href="#analytics">Analytics</a></li>
+              <li><a href="#product">Integrations</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-col-list">
+              <li><a href="#hero">About</a></li>
+              <li><a href="#testimonials">Customers</a></li>
+              <li><a href="#" data-modal-target="demoModal">Careers</a></li>
+              <li><a href="#" data-modal-target="demoModal">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Resources</h4>
+            <ul class="footer-col-list">
+              <li><a href="#faq">Documentation</a></li>
+              <li><a href="#faq">Help Center</a></li>
+              <li><a href="#product">Blog</a></li>
+              <li><a href="#workflow">Guides</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Legal</h4>
+            <ul class="footer-col-list">
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 NEXORA Technologies Inc. All rights reserved.</p>
+        <p class="footer-notice">Designed with precision for modern engineering &amp; operations teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 15. FLOATING BACK TO TOP BUTTON -->
+  <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Modal 1: Sign Up Modal -->
+  <div class="modal-overlay" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupTitle" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="badge-accent">14-Day Free Trial</span>
+        <h3 class="modal-title" id="signupTitle">Create your NEXORA workspace</h3>
+        <p class="modal-subtitle">Start organizing and automating your team's workflow in seconds.</p>
+      </div>
+
+      <form id="signupForm" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="signupName" class="form-label">Full Name</label>
+          <input type="text" id="signupName" class="form-input" placeholder="e.g. Maya Chen" autocomplete="name">
+          <span class="form-error" id="signupNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="signupEmail" class="form-label">Work Email</label>
+          <input type="email" id="signupEmail" class="form-input" placeholder="name@company.com" autocomplete="email">
+          <span class="form-error" id="signupEmailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="signupPassword" class="form-label">Password</label>
+          <input type="password" id="signupPassword" class="form-input" placeholder="At least 8 characters" autocomplete="new-password">
+          <span class="form-error" id="signupPasswordError"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Create account</button>
+      </form>
+
+      <div class="modal-success-state" id="signupSuccess" hidden>
+        <div class="success-icon">&#10003;</div>
+        <h4>You're on the list!</h4>
+        <p>Welcome to NEXORA. Your workspace is ready for action.</p>
+        <button type="button" class="btn btn-secondary btn-block" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Book a Demo Modal -->
+  <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="demoTitle" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="badge-accent">Tailored Walkthrough</span>
+        <h3 class="modal-title" id="demoTitle">Book a live interactive demo</h3>
+        <p class="modal-subtitle">See how NEXORA customizes to your specific engineering and operations pipeline.</p>
+      </div>
+
+      <form id="demoForm" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="demoName" class="form-label">Name</label>
+          <input type="text" id="demoName" class="form-input" placeholder="e.g. Alex Kim">
+          <span class="form-error" id="demoNameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="demoEmail" class="form-label">Work Email</label>
+          <input type="email" id="demoEmail" class="form-input" placeholder="alex@vanta.com">
+          <span class="form-error" id="demoEmailError"></span>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="demoCompany" class="form-label">Company</label>
+            <input type="text" id="demoCompany" class="form-input" placeholder="Vanta Labs">
+            <span class="form-error" id="demoCompanyError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="demoTeamSize" class="form-label">Team Size</label>
+            <select id="demoTeamSize" class="form-input">
+              <option value="1-10">1-10 people</option>
+              <option value="11-50" selected>11-50 people</option>
+              <option value="51-200">51-200 people</option>
+              <option value="201+">201+ people</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="demoMessage" class="form-label">What workflows would you like to solve?</label>
+          <textarea id="demoMessage" class="form-input form-textarea" rows="3" placeholder="Tell us about your current toolset and pain points..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Schedule Demo Session</button>
+      </form>
+
+      <div class="modal-success-state" id="demoSuccess" hidden>
+        <div class="success-icon">&#10003;</div>
+        <h4>Thanks! We'll be in touch.</h4>
+        <p>Our solutions engineer will contact you within one business day with a customized demo link.</p>
+        <button type="button" class="btn btn-secondary btn-block" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+</body>
